@@ -15,6 +15,8 @@ public class AleatoryDevelopersExecute {
 		nomesFixos.add("Pedro");
 		nomesFixos.add("Judas");
 		
+		
+		
 		String listaMudou = JOptionPane.showInputDialog("A lista mudou ? (Responda S ou N)");
 		if("Sim".equals(listaMudou)){
 			
@@ -36,22 +38,16 @@ public class AleatoryDevelopersExecute {
 			Collections.shuffle(nomesDevelopers);
 		} else if("Nao".equals(listaMudou)) {
 			Collections.shuffle(nomesFixos);
-			int i = nomesFixos.size();
-			
-			for(;i==1;i--){
-				nomesFixos.remove(i);
+			//int i = nomesFixos.size();
+			List<String> nomesASeremRemovidos = new ArrayList<String>();
+			for(int i=4; i==1; i++){
+				nomesASeremRemovidos.add(nomesFixos.get(i));
 			}
+			
+			nomesFixos.removeAll(nomesASeremRemovidos);
 			
 			JOptionPane.showMessageDialog(null, "O escolhido do dia para fazer deploy é o : " + nomesFixos.get(0));
 		}
-		
-		
-		
-		
-		
-		
-		
-		
 			
 	}
 }
